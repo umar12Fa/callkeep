@@ -169,10 +169,10 @@ class _MyAppState extends State<HomePage> {
     });
   }
 
-  Future<void> endCall(CallKeepPerformEndCallAction event) async {
-    print('endCall: ${event.callUUID}');
-    removeCall(event.callUUID);
-  }
+  // Future<void> endCall(CallKeepPerformEndCallAction event) async {
+  //   print('endCall: ${event.callUUID}');
+  //   removeCall(event.callUUID);
+  // }
 
   Future<void> didPerformDTMFAction(CallKeepDidPerformDTMFAction event) async {
     print('[didPerformDTMFAction] ${event.callUUID}, digits: ${event.digits}');
@@ -307,7 +307,7 @@ class _MyAppState extends State<HomePage> {
     _callKeep.on(CallKeepDidToggleHoldAction(), didToggleHoldCallAction);
     _callKeep.on(
         CallKeepDidPerformSetMutedCallAction(), didPerformSetMutedCallAction);
-    _callKeep.on(CallKeepPerformEndCallAction(), endCall);
+    // _callKeep.on(CallKeepPerformEndCallAction(), endCall);
     _callKeep.on(CallKeepPushKitToken(), onPushKitToken);
 
     _callKeep.setup(context, <String, dynamic>{
